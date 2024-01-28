@@ -17,5 +17,10 @@ namespace GeekShopping.ProductAPI.Model.Context
         /// </summary>
         /// <param name="options">The options.</param>
         public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) { }
+
+        /// <summary>
+        /// Gets or Sets the products.
+        /// </summary>
+        public DbSet<Product> Products { get; set; }
     }
 }

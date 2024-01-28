@@ -1,5 +1,5 @@
-using GeekShopping.ProductAPI.Model.Context;
 using Microsoft.EntityFrameworkCore;
+using GeekShopping.ProductAPI.Model.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -12,8 +12,6 @@ builder.Services.AddSwaggerGen();
 var connection = configuration["MySQLConnection:MySQLConnectionString"];
 builder.Services.AddDbContext<MySQLContext>(option => 
                                             option.UseMySql(connection, new MySqlServerVersion(new Version(8, 0, 5))));
-
-
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
